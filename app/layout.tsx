@@ -1,15 +1,20 @@
 import type { Metadata } from 'next';
+import { Inter, Iceberg } from 'next/font/google';
 import './tailwind.generated.css';
 import './globals.css';
 import Image from 'next/image';
 
+const inter = Inter({ subsets: ['latin'] });
+const iceberg = Iceberg({ weight: '400', subsets: ['latin'] });
+
 const TECHNOLOGIES = [
   { name: 'AutoCAD', src: '/technologies/autocad.png', width: 140, height: 40 },
-  { name: 'Revit', src: '/technologies/revit.png', width: 120, height: 40 },
+  { name: 'Revit', src: '/brands/d5render-logo-hor-gradient-dark-en.png', width: 120, height: 40 },
   { name: '3ds Max', src: '/technologies/3dsmax.png', width: 130, height: 40 },
   { name: 'SolidWorks', src: '/technologies/solidworks.png', width: 150, height: 40 },
   { name: 'SketchUp', src: '/technologies/sketchup_logo.png', width: 130, height: 40 },
   { name: 'Navisworks', src: '/technologies/navisworks.png', width: 150, height: 40 },
+  { name: 'Vertiv', src: '/brands/vertiv-seeklogo.png', width: 130, height: 40 },
 ];
 
 const BRANDS = [
@@ -37,36 +42,45 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-slate-950 text-slate-100">
-        <div className="flex min-h-screen flex-col">
-          <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-              <div className="flex items-center gap-3">
+    <html lang="en" className={inter.className}>
+      <body className="min-h-screen text-[#1D1D1F] antialiased selection:bg-blue-100 selection:text-blue-900 relative">
+        <div className="fixed inset-0 -z-10 h-full w-full">
+          <Image 
+            src="/brands/wmremove-transformed.jpeg" 
+            alt="Website Background" 
+            fill 
+            priority
+            className="object-cover opacity-100" 
+          />
+        </div>
+        <div className="flex min-h-screen flex-col selection:bg-blue-100 relative z-10">
+          <header className="sticky top-0 z-50 border-b border-[#E5E5E7] bg-white/70 backdrop-blur-md transition-all">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+              <div className="flex items-center gap-4">
                 <Image
                   src="/logo-spk-integrity.jpg"
                   alt="SPK Integrity Logo"
-                  width={64}
-                  height={64}
-                  className="h-14 w-14 rounded-full border border-sky-500/40 bg-slate-900 object-contain"
+                  width={50}
+                  height={50}
+                  className="cursor-pointer rounded-xl border border-[#E5E5E7] bg-white object-contain shadow-sm transition-transform duration-300 hover:scale-150"
                 />
                 <div>
-                  <div className="text-sm font-semibold tracking-[0.18em] text-sky-400">
-                    SPK INTEGRITY
+                  <div className={`text-3xl font-bold tracking-wider text-[#F97316] ${iceberg.className}`}>
+                    SPK Integr<span className="text-black">i</span>ty
                   </div>
-                  <div className="text-xs text-slate-400">
-                    Serving customers with Trust !
+                  <div className="text-sm font-medium text-[#86868B]">
+                    Serving customers with Trust
                   </div>
                 </div>
               </div>
-              <nav className="flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="/" className="hover:text-sky-400">
+              <nav className="flex items-center gap-6 text-sm font-medium text-[#6E6E73]">
+                <a href="/" className="transition-colors duration-200 hover:text-[#1D1D1F]">
                   Home
                 </a>
-                <a href="/products" className="hover:text-sky-400">
+                <a href="/products" className="transition-colors duration-200 hover:text-[#1D1D1F]">
                   Products
                 </a>
-                <a href="/contact" className="hover:text-sky-400">
+                <a href="/contact" className="transition-colors duration-200 hover:text-[#1D1D1F]">
                   Contact
                 </a>
               </nav>
@@ -74,17 +88,17 @@ export default function RootLayout({
           </header>
 
           <main className="flex-1">
-            <div className="mx-auto max-w-6xl px-4 py-10">{children}</div>
+            <div className="mx-auto max-w-6xl px-6 py-12 md:py-24">{children}</div>
           </main>
 
-          <section className="relative z-10">
-            <div className="mx-auto max-w-6xl px-4 space-y-4">
-              <div className="rounded-3xl border border-slate-800 bg-slate-900/90 px-6 py-6 text-center shadow-xl shadow-slate-950/60 backdrop-blur sm:px-8">
-                <h2 className="text-base font-semibold tracking-tight text-slate-50">
-                  Our Technologies.
+          <section className="relative z-10 mx-auto max-w-8xl w-full px-6 py-12">
+            <div className="flex flex-col gap-8">
+              <div className="rounded-2xl border border-[#E5E5E7] bg-white p-8 text-center shadow-sm transition-all duration-300 hover:shadow-md">
+                <h2 className="text-lg font-semibold tracking-tight text-[#1D1D1F]">
+                  Our Technologies
                 </h2>
-                <div className="brands-marquee mt-4 overflow-hidden">
-                  <div className="tech-marquee-track flex items-center gap-x-10 whitespace-nowrap">
+                <div className="brands-marquee mt-8 overflow-hidden">
+                  <div className="tech-marquee-track flex items-center gap-x-12 whitespace-nowrap  transition hover:opacity-100">
                     {[...TECHNOLOGIES, ...TECHNOLOGIES].map((tech, index) => (
                       <Image
                         key={`${tech.name}-${index}`}
@@ -92,19 +106,19 @@ export default function RootLayout({
                         alt={tech.name}
                         width={tech.width}
                         height={tech.height}
-                        className="h-7 w-auto opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+                        className="h-8 w-auto transition duration-300"
                       />
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div className="-mb-10 rounded-3xl border border-slate-800 bg-slate-900/90 px-6 py-6 text-center shadow-xl shadow-slate-950/60 backdrop-blur sm:px-8">
-                <h2 className="text-base font-semibold tracking-tight text-slate-50">
-                  Brands We Deal With.
+              <div className="rounded-2xl border border-[#E5E5E7] bg-white p-8 text-center shadow-sm transition-all duration-300 hover:shadow-md">
+                <h2 className="text-lg font-semibold tracking-tight text-[#1D1D1F]">
+                  Brands We Deal With
                 </h2>
-                <div className="brands-marquee mt-4 overflow-hidden">
-                  <div className="brands-marquee-track flex items-center gap-x-10 whitespace-nowrap">
+                <div className="brands-marquee mt-8 overflow-hidden">
+                  <div className="brands-marquee-track flex items-center gap-x-12 whitespace-nowrap opacity-80 transition hover:opacity-100">
                     {[...BRANDS, ...BRANDS].map((brand, index) => (
                       <Image
                         key={`${brand.name}-${index}`}
@@ -112,7 +126,7 @@ export default function RootLayout({
                         alt={brand.name}
                         width={brand.width}
                         height={brand.height}
-                        className="h-7 w-auto opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+                        className="h-8 w-auto transition duration-300"
                       />
                     ))}
                   </div>
@@ -121,13 +135,13 @@ export default function RootLayout({
             </div>
           </section>
 
-          <footer className="border-t border-slate-800 bg-slate-950 pt-14">
-            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-slate-500 sm:flex-row">
+          <footer className="mt-16 border-t border-[#E5E5E7] bg-white/60 backdrop-blur-sm pt-12 relative z-10">
+            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-[#86868B] sm:flex-row">
               <div>
                 &copy; {new Date().getFullYear()} SPK Integrity. All rights reserved.
               </div>
-              <div className="flex gap-4">
-                <span>Integrity &bull; Safety &bull; Reliability</span>
+              <div className="flex font-medium text-[#6E6E73]">
+                Integrity &nbsp;&middot;&nbsp; Safety &nbsp;&middot;&nbsp; Reliability
               </div>
             </div>
           </footer>

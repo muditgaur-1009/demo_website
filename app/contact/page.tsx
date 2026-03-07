@@ -29,53 +29,63 @@ export default function ContactPage() {
   return (
     <div className="space-y-10">
       <header className="space-y-3">
-        <h1 className="text-2xl font-semibold text-slate-50 sm:text-3xl">
+        <h1 className="text-2xl font-semibold text-black sm:text-3xl">
           Contact SPK Integrity
         </h1>
-        <p className="max-w-2xl text-sm text-slate-300">
+        <p className="max-w-2xl text-sm text-black">
           Take the first step toward a more efficient future. Share your software, power backup
           and support requirements, and we&apos;ll respond with a focused proposal.
         </p>
       </header>
 
       <section className="grid gap-8 md:grid-cols-[2fr,3fr]">
-        <div className="space-y-5 rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-          <h2 className="text-sm font-semibold text-slate-100">Business details</h2>
-          <dl className="space-y-3 text-xs text-slate-300">
+        <div className="flex flex-col justify-center space-y-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+          <h2 className="text-xl font-bold uppercase tracking-wider text-black">Business details</h2>
+          <dl className="space-y-6 text-sm sm:text-base text-slate-800">
             <div>
-              <dt className="font-medium text-slate-200">Email</dt>
+              <dt className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-1">Email</dt>
               <dd>
                 <a
                   href="mailto:sales@spkintegrity.co.in"
-                  className="text-sky-400 hover:text-sky-300"
+                  className="font-medium text-slate-900 transition-colors hover:text-orange-500"
                 >
                   sales@spkintegrity.co.in
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="font-medium text-slate-200">Phone</dt>
-              <dd className="text-slate-300">+91 9892095200</dd>
+              <dt className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-1">Phone</dt>
+              <dd className="font-medium text-slate-900">+91 9892095200</dd>
+              <dd className="font-medium text-slate-900">+91 9993299966</dd>
             </div>
             <div>
-              <dt className="font-medium text-slate-200">Office address</dt>
-              <dd className="text-slate-300">
-                SPK Integrity, Mumbai, Maharashtra, India
+              <dt className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2">Corporate Presence</dt>
+              <dd className="space-y-3">
+                <div className="rounded-lg bg-orange-50/50 p-3 border border-orange-100">
+                  <span className="block text-xs font-bold text-orange-600 mb-1">Head Office</span>
+                  <span className="font-medium text-slate-900">SPK Integrity, Mumbai, Maharashtra, India</span>
+                </div>
+                <div className="rounded-lg bg-slate-50/50 p-3 border border-slate-100">
+                  <span className="block text-xs font-bold text-slate-500 mb-1">Operational Presence</span>
+                  <span className="font-medium text-slate-900">Across Madhya Pradesh and Maharashtra</span>
+                </div>
               </dd>
             </div>
             <div>
-              <dt className="font-medium text-slate-200">Business hours</dt>
-              <dd className="text-slate-300">Monday to Friday, 9:00 to 18:00 (local time)</dd>
+              <dt className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-1">Business hours</dt>
+              <dd className="font-medium text-slate-900">Monday to Friday<br />9:00 to 18:00 (local time)</dd>
             </div>
           </dl>
         </div>
 
-        <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-          <h2 className="text-sm font-semibold text-slate-100">Send an enquiry</h2>
-          <p className="text-xs text-slate-400">
-            Submit this form to send your enquiry directly to our sales team.
-          </p>
-          <form className="space-y-4" onSubmit={handleSubmit}>
+        <div className="flex flex-col space-y-6 rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+          <div>
+            <h2 className="text-xl font-bold uppercase tracking-wider text-black">Send an enquiry</h2>
+            <p className="mt-2 text-sm text-slate-500">
+              Submit this form to send your enquiry directly to our sales team.
+            </p>
+          </div>
+          <form className="space-y-4 flex-1" onSubmit={handleSubmit}>
             <input
               type="hidden"
               name="_subject"
@@ -83,79 +93,79 @@ export default function ContactPage() {
             />
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-slate-200" htmlFor="name">
+                <label className="block text-xs font-medium text-black" htmlFor="name">
                   Name
                 </label>
                 <input
                   id="name"
                   name="name"
-                  className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-sky-500/40 focus:border-sky-500 focus:ring-1"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs text-black outline-none ring-orange-500/40 focus:border-orange-500 focus:ring-1"
                   placeholder="Your full name"
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-slate-200" htmlFor="company">
+                <label className="block text-xs font-medium text-black" htmlFor="company">
                   Company
                 </label>
                 <input
                   id="company"
                   name="company"
-                  className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-sky-500/40 focus:border-sky-500 focus:ring-1"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs text-black outline-none ring-orange-500/40 focus:border-orange-500 focus:ring-1"
                   placeholder="Organization name"
                 />
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-slate-200" htmlFor="email">
+                <label className="block text-xs font-medium text-black" htmlFor="email">
                   Email
                 </label>
                 <input
                   id="email"
                   type="email"
                   name="email"
-                  className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-sky-500/40 focus:border-sky-500 focus:ring-1"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs text-black outline-none ring-orange-500/40 focus:border-orange-500 focus:ring-1"
                   placeholder="name@company.com"
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-slate-200" htmlFor="phone">
+                <label className="block text-xs font-medium text-black" htmlFor="phone">
                   Phone
                 </label>
                 <input
                   id="phone"
                   name="phone"
-                  className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-sky-500/40 focus:border-sky-500 focus:ring-1"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs text-black outline-none ring-orange-500/40 focus:border-orange-500 focus:ring-1"
                   placeholder="+00 000 000 0000"
                 />
               </div>
             </div>
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-slate-200" htmlFor="subject">
+              <label className="block text-xs font-medium text-black" htmlFor="subject">
                 Subject
               </label>
               <input
                 id="subject"
                 name="subject"
-                className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-sky-500/40 focus:border-sky-500 focus:ring-1"
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs text-black outline-none ring-orange-500/40 focus:border-orange-500 focus:ring-1"
                 placeholder="Brief summary of your enquiry"
               />
             </div>
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-slate-200" htmlFor="message">
+              <label className="block text-xs font-medium text-black" htmlFor="message">
                 Message
               </label>
               <textarea
                 id="message"
                 rows={4}
                 name="message"
-                className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-100 outline-none ring-sky-500/40 focus:border-sky-500 focus:ring-1"
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs text-black outline-none ring-orange-500/40 focus:border-orange-500 focus:ring-1"
                 placeholder="Asset scope, location, timelines, and any specific integrity or reliability challenges."
               />
             </div>
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-md bg-sky-500 px-4 py-2 text-xs font-medium text-slate-950 shadow shadow-sky-500/40 transition hover:bg-sky-400"
+              className="inline-flex items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-xs font-medium text-white shadow shadow-orange-500/40 transition hover:bg-orange-600"
             >
               Submit enquiry
             </button>
