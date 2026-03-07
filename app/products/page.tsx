@@ -160,9 +160,9 @@ export default function ProductsPage() {
                         <div className="w-8 h-1 bg-orange-400 rounded-full"></div>
                       </div>
                       
-                      {sub.items ? (
+                      {'items' in sub && sub.items ? (
                         <ul className="space-y-4 w-full flex flex-col items-center md:items-start">
-                          {sub.items.map((item, idx) => (
+                          {sub.items.map((item: string, idx: number) => (
                             <li key={idx} className="flex items-center gap-4 group cursor-default transition-all duration-300 hover:translate-x-2">
                               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-slate-100 group-hover:border-orange-300 group-hover:shadow-md transition-all duration-300">
                                 <span className="h-2 w-2 rounded-full bg-slate-300 group-hover:bg-orange-500 group-hover:scale-125 transition-all duration-300" />
@@ -171,9 +171,9 @@ export default function ProductsPage() {
                             </li>
                           ))}
                         </ul>
-                      ) : sub.images ? (
+                      ) : 'images' in sub && sub.images ? (
                         <div className="flex flex-wrap gap-8 w-full items-center justify-center md:justify-start">
-                          {sub.images.map((img, idx) => (
+                          {sub.images.map((img: any, idx: number) => (
                             <Image
                               key={idx}
                               src={img.src}
