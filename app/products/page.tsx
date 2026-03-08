@@ -44,7 +44,6 @@ const productSections = [
       { src: '/technologies/navisworks.png', alt: 'Navisworks', width: 150, height: 40 },
       { src: '/technologies/logo_wide_blue.png', alt: 'Software Logo', width: 150, height: 40 },
       { src: '/technologies/sketchup.png', alt: 'SketchUp', width: 130, height: 40 },
-      { src: '/brands/vertiv-seeklogo.png', alt: 'Vertiv', width: 130, height: 40 }
     ]
   },
   { 
@@ -174,14 +173,14 @@ export default function ProductsPage() {
                       ) : 'images' in sub && sub.images ? (
                         <div className="flex flex-wrap gap-8 w-full items-center justify-center md:justify-start">
                           {sub.images.map((img: any, idx: number) => (
-                            <Image
-                              key={idx}
-                              src={img.src}
-                              alt={img.alt}
-                              width={img.width}
-                              height={img.height}
-                              className="h-16 w-auto object-contain transition-transform hover:scale-110"
-                            />
+                            <div key={idx} className="relative w-[150px] h-[60px] flex items-center justify-center bg-white rounded-lg shadow-sm border border-slate-100 p-2 hover:shadow-md hover:scale-105 transition-all duration-300">
+                              <Image
+                                src={img.src}
+                                alt={img.alt}
+                                fill
+                                className="object-contain p-2"
+                              />
+                            </div>
                           ))}
                         </div>
                       ) : (
@@ -198,14 +197,14 @@ export default function ProductsPage() {
                 <div className="flex flex-wrap items-center justify-center gap-12 min-h-[100px] w-full max-w-4xl mx-auto">
                   {section.images && section.images.length > 0 ? (
                     section.images.map((img, idx) => (
-                      <Image
-                        key={idx}
-                        src={img.src}
-                        alt={img.alt}
-                        width={img.width}
-                        height={img.height}
-                        className="h-16 w-auto object-contain transition-transform hover:scale-110"
-                      />
+                      <div key={idx} className="relative w-[150px] h-[60px] flex items-center justify-center bg-white rounded-lg shadow-sm border border-slate-100 p-2 hover:shadow-md hover:scale-105 transition-all duration-300">
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          className="object-contain p-2"
+                        />
+                      </div>
                     ))
                   ) : (
                     <div className="rounded-lg border border-dashed border-slate-300 p-8 text-center w-full bg-slate-50/50">

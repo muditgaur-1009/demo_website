@@ -3,15 +3,15 @@
 export default function HomePage() {
   return (
     <div className="space-y-16">
-      <section className="grid items-center gap-10 md:grid-cols-[3fr,2fr]">
-        <div className="space-y-6">
-          <h1 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl lg:text-5xl">
+      <section className="grid items-center gap-10 grid-cols-1 lg:grid-cols-[3fr,2fr]">
+        <div className="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+          <h1 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl lg:text-5xl max-w-2xl">
             Multi-disciplinary Softwares, Hardwares, CAD &amp; Power Infrastructure Solutions.
           </h1>
           <p className="max-w-xl text-sm text-black sm:text-base">
             Established as a multi-disciplinary solutions provider, SPK Integrity bridges the gap between digital design and physical infrastructure. We specialize in the sales, implementation, and support of world-class CAD software, 3D design and rendering tools, remote access solutions, and other enterprise software. We also provide rental, sales, and maintenance services for power backup systems including UPS, inverters, and batteries through a flexible rental model with zero capex and easy scalability. For CAD solutions, we help organizations stay compliant, up to date, and fully supported across software and hardware environments.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center lg:justify-start w-full sm:w-auto">
             <a
               href="/contact"
               className="inline-flex items-center justify-center rounded-md bg-orange-500 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-orange-500/30 transition hover:bg-orange-400"
@@ -100,7 +100,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-orange-500/40 bg-orange-50 px-6 py-7 sm:flex sm:items-center sm:justify-between">
+      <section className="rounded-3xl border border-orange-500/40 bg-orange-50 px-6 py-7 flex flex-col items-center justify-between text-center sm:flex-row sm:text-left gap-4 sm:gap-0">
         <div>
           <h2 className="text-base font-semibold text-black">
             Ready to discuss your integrity challenges?
@@ -112,7 +112,7 @@ export default function HomePage() {
         </div>
         <a
           href="/contact"
-          className="mt-4 inline-flex items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-xs font-medium text-white shadow shadow-orange-500/40 transition hover:bg-orange-400 sm:mt-0 sm:text-sm"
+          className="inline-flex items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-xs font-medium text-white shadow shadow-orange-500/40 transition hover:bg-orange-400 sm:text-sm whitespace-nowrap"
         >
           Contact SPK Integrity
         </a>

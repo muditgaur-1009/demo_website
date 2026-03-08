@@ -14,7 +14,6 @@ const TECHNOLOGIES = [
   { name: 'SolidWorks', src: '/technologies/solidworks.png', width: 150, height: 40 },
   { name: 'SketchUp', src: '/technologies/sketchup_logo.png', width: 130, height: 40 },
   { name: 'Navisworks', src: '/technologies/navisworks.png', width: 150, height: 40 },
-  { name: 'Vertiv', src: '/brands/vertiv-seeklogo.png', width: 130, height: 40 },
 ];
 
 const BRANDS = [
@@ -28,6 +27,7 @@ const BRANDS = [
   { name: 'BPE', src: '/brands/bpe.png', width: 1000, height: 40 },
   { name: 'Schneider Electric', src: '/brands/schneider_electric.jpg', width: 160, height: 40 },
   { name: 'Eaton', src: '/brands/eaton.jpg', width: 120, height: 40 },
+  { name: 'Vertiv', src: '/brands/vertiv-seeklogo.png', width: 130, height: 40 },
 ];
 
 export const metadata: Metadata = {
@@ -55,13 +55,13 @@ export default function RootLayout({
         </div>
         <div className="flex min-h-screen flex-col selection:bg-blue-100 relative z-10">
           <header className="sticky top-0 z-50 border-b border-[#E5E5E7] bg-white/70 backdrop-blur-md transition-all">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-              <div className="flex items-center gap-4">
+            <div className="mx-auto flex max-w-6xl flex-col md:flex-row items-center justify-between gap-4 md:gap-0 px-6 py-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                 <Image
                   src="/logo-spk-integrity.jpg"
                   alt="SPK Integrity Logo"
-                  width={50}
-                  height={50}
+                  width={70}
+                  height={70}
                   className="cursor-pointer rounded-xl border border-[#E5E5E7] bg-white object-contain shadow-sm transition-transform duration-300 hover:scale-150"
                 />
                 <div>
@@ -73,7 +73,7 @@ export default function RootLayout({
                   </div>
                 </div>
               </div>
-              <nav className="flex items-center gap-6 text-sm font-medium text-[#6E6E73]">
+              <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm font-medium text-[#6E6E73] mt-2 md:mt-0">
                 <a href="/" className="transition-colors duration-200 hover:text-[#1D1D1F]">
                   Home
                 </a>
@@ -95,7 +95,7 @@ export default function RootLayout({
             <div className="flex flex-col gap-8">
               <div className="rounded-2xl border border-[#E5E5E7] bg-white p-8 text-center shadow-sm transition-all duration-300 hover:shadow-md">
                 <h2 className="text-lg font-semibold tracking-tight text-[#1D1D1F]">
-                  Our Technologies
+                  Software Brands We Deal With
                 </h2>
                 <div className="brands-marquee mt-8 overflow-hidden">
                   <div className="tech-marquee-track flex items-center gap-x-12 whitespace-nowrap  transition hover:opacity-100">
@@ -115,7 +115,7 @@ export default function RootLayout({
 
               <div className="rounded-2xl border border-[#E5E5E7] bg-white p-8 text-center shadow-sm transition-all duration-300 hover:shadow-md">
                 <h2 className="text-lg font-semibold tracking-tight text-[#1D1D1F]">
-                  Brands We Deal With
+                  Hardware Brands We Deal With
                 </h2>
                 <div className="brands-marquee mt-8 overflow-hidden">
                   <div className="brands-marquee-track flex items-center gap-x-12 whitespace-nowrap opacity-80 transition hover:opacity-100">
@@ -136,11 +136,11 @@ export default function RootLayout({
           </section>
 
           <footer className="mt-16 border-t border-[#E5E5E7] bg-white/60 backdrop-blur-sm pt-12 relative z-10">
-            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-[#86868B] sm:flex-row">
+            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-center text-sm text-[#86868B] sm:flex-row sm:text-left">
               <div>
                 &copy; {new Date().getFullYear()} SPK Integrity. All rights reserved.
               </div>
-              <div className="flex font-medium text-[#6E6E73]">
+              <div className="flex font-medium text-[#6E6E73] flex-wrap justify-center text-center">
                 Integrity &nbsp;&middot;&nbsp; Safety &nbsp;&middot;&nbsp; Reliability
               </div>
             </div>

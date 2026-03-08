@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 export default function ContactPage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -40,7 +41,16 @@ export default function ContactPage() {
 
       <section className="grid gap-8 md:grid-cols-[2fr,3fr]">
         <div className="flex flex-col justify-center space-y-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
-          <h2 className="text-xl font-bold uppercase tracking-wider text-black">Business details</h2>
+          <div className="flex items-center justify-between gap-4">
+            <h2 className="text-xl font-bold uppercase tracking-wider text-black">Business details</h2>
+            <Image
+              src="/logo-spk-integrity.jpg"
+              alt="SPK Integrity Logo"
+              width={100}
+              height={100}
+              className="rounded-xl border border-[#E5E5E7] object-contain shadow-sm"
+            />
+          </div>
           <dl className="space-y-6 text-sm sm:text-base text-slate-800">
             <div>
               <dt className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-1">Email</dt>
