@@ -12,8 +12,11 @@ const TECHNOLOGIES = [
   { name: 'Revit', src: '/brands/d5render-logo-hor-gradient-dark-en.png', width: 120, height: 40 },
   { name: '3ds Max', src: '/technologies/3dsmax.png', width: 130, height: 40 },
   { name: 'SolidWorks', src: '/technologies/solidworks.png', width: 150, height: 40 },
-  { name: 'SketchUp', src: '/technologies/sketchup_logo.png', width: 130, height: 40 },
+  { name: 'SketchUp Logo', src: '/technologies/sketchup_logo.png', width: 130, height: 40 },
   { name: 'Navisworks', src: '/technologies/navisworks.png', width: 150, height: 40 },
+  { name: 'Foxit', src: '/technologies/foxit.png', width: 130, height: 40 },
+  { name: 'SketchUp', src: '/technologies/sketchup.png', width: 130, height: 40 },
+  { name: 'ARCHLine', src: '/technologies/acrhline.png', width: 140, height: 40 },
 ];
 
 const BRANDS = [

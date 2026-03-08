@@ -40,10 +40,12 @@ const productSections = [
     title: 'SOFTWARE',
     images: [
       { src: '/technologies/autocad.png', alt: 'AutoCAD', width: 140, height: 40 },
-      { src: '/technologies/3dsmax.png', alt: '3ds Max', width: 130, height: 40 },
       { src: '/technologies/navisworks.png', alt: 'Navisworks', width: 150, height: 40 },
       { src: '/technologies/logo_wide_blue.png', alt: 'Software Logo', width: 150, height: 40 },
       { src: '/technologies/sketchup.png', alt: 'SketchUp', width: 130, height: 40 },
+      { src: '/technologies/sketchup_logo.png', alt: 'SketchUp', width: 130, height: 40 },
+      { src: '/technologies/foxit.png', alt: 'SketchUp', width: 130, height: 40 },
+      { src: '/technologies/acrhline.png', alt: 'SketchUp', width: 130, height: 40 },
     ]
   },
   { 
@@ -84,7 +86,8 @@ const productSections = [
     id: 'plugin', 
     title: 'PLUGIN',
     images: [
-      { src: '/brands/d5render-logo-hor-gradient-dark-en.png', alt: 'D5 Render', width: 250, height: 80 }
+      { src: '/brands/d5render-logo-hor-gradient-dark-en.png', alt: 'D5 Render', width: 250, height: 80 },
+          { src: '/technologies/3dsmax.png', alt: '3ds Max', width: 130, height: 40 },
     ]
   },
   { 
